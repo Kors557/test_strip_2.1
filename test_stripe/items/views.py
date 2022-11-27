@@ -48,7 +48,7 @@ class CreateCheckoutSessionView(View):
 def get_item(request, **kwargs):
     item = Item.objects.get(id=kwargs['pk'])
     context = {
-            'item': item,
-            "STRIPE_PUBLIC_KEY": os.getenv('PK_STRIPE')
+        'item': item,
+        "STRIPE_PUBLIC_KEY": os.getenv('PK_STRIPE')
         }
     return render(request, 'landing.html', context)
