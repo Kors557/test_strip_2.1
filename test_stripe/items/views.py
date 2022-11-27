@@ -50,5 +50,5 @@ def get_item(request, **kwargs):
     context = {
         'item': item,
         "STRIPE_PUBLIC_KEY": os.getenv('PK_STRIPE')
-        }
+    }
     return render(request, 'landing.html', context)
