@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Buy item</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+
+  <body>
+      <section>
+          <div class="item">
+              <div class="description">
+                  <h1>{{ item.name }}</h1>
+                  <p>{{ item.description }}</p>
+                  <hr />
+                  <div>
+                      <h5>{{ item.price }}$</h5>
+                      <form action="{% url 'create-checkout-session' item.id %}" method="GET">
+                          <button type="submit">Buy</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </body>
+
+</html>
+
